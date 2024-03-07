@@ -50,7 +50,7 @@ async function mainWithDelay() {
             const ip = ipList[i];
             const url = `https://rdap.arin.net/registry/ip/${ip}`;
             process.stdout.write(chalk.green.bold(`process IP ${i + 1}/${ipList.length} (${ip}) ->   `));
-            const ipRange = await grabIPRangeWithDelay(url, 500);
+            const ipRange = await grabIPRangeWithDelay(url, 200);
             if (ipRange) {
                 console.log(chalk.green.bold('Success'));
                 outputData += `${ipRange}\n`;
